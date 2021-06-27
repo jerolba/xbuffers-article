@@ -26,7 +26,7 @@ public class FromFlatBuffersMappedFileAll {
             }
         }
         stats.printStat();
-        hitogram();
+        histogram();
     }
 
     public static Organizations deserialize(FileChannel inChannel) throws IOException {
@@ -53,7 +53,7 @@ public class FromFlatBuffersMappedFileAll {
         return organizations;
     }
 
-    public static void hitogram() {
+    public static void histogram() {
         MemoryHisto.histo(() -> {
             try (RandomAccessFile aFile = new RandomAccessFile("/tmp/organizations.flatbuffers", "r")) {
                 FileChannel inChannel = aFile.getChannel();

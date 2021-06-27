@@ -20,7 +20,7 @@ public class FromFlatBuffersMemory {
             stats.add(sw);
         }
         stats.printStat();
-        hitogram();
+        histogram();
     }
 
     public static Organizations deserialize(String filePath) throws IOException {
@@ -43,7 +43,7 @@ public class FromFlatBuffersMemory {
         }
     }
 
-    public static void hitogram() {
+    public static void histogram() {
         MemoryHisto.histo(() -> {
             try {
                 return deserialize("/tmp/organizations.flatbuffers");

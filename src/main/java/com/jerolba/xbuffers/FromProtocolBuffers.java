@@ -20,7 +20,7 @@ public class FromProtocolBuffers {
             }
         }
         stats.printStat();
-        hitogram();
+        histogram();
     }
 
     public static Organizations deserialize(InputStream is) throws IOException {
@@ -28,7 +28,7 @@ public class FromProtocolBuffers {
         return organizations;
     }
 
-    public static void hitogram() {
+    public static void histogram() {
         MemoryHisto.histo(() -> {
             try (InputStream is = new FileInputStream("/tmp/organizations.protobuffer")) {
                 return deserialize(is);

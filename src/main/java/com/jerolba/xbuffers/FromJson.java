@@ -23,7 +23,7 @@ public class FromJson {
             }
         }
         stats.printStat();
-        hitogram();
+        histogram();
     }
 
     public static List<Org> deserialize(InputStream is) throws IOException {
@@ -32,7 +32,7 @@ public class FromJson {
         });
     }
 
-    public static void hitogram() {
+    public static void histogram() {
         MemoryHisto.histo(() -> {
             try (InputStream is = new FileInputStream("/tmp/organizations.json")) {
                 return deserialize(is);
