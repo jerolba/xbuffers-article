@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(16)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.3'
+	implementation 'com.google.protobuf:protobuf-java:3.16.0'
+	implementation 'com.google.flatbuffers:flatbuffers-java:1.12.0'
+	implementation 'com.github.javafaker:javafaker:1.0.2'
+	implementation 'com.google.guava:guava:30.1.1-jre'
+	implementation 'com.jerolba:jmnemohistosyne:0.2.3'
+}
+

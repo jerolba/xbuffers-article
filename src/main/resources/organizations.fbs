@@ -1,0 +1,26 @@
+namespace com.jerolba.xbuffers.flat;
+
+enum OrganizationType : byte { FOO, BAR, BAZ }
+
+table Attribute {
+    id: string;
+    quantity: byte; 
+    amount: byte;
+    size: short;
+    percent: double;
+    active: bool;
+}
+
+table Organization {
+    name: string;
+    category: string;
+    type: OrganizationType;
+    country: string;
+    attributes: [Attribute];
+}
+
+table Organizations {
+    organizations: [Organization];
+}
+
+root_type Organizations;
