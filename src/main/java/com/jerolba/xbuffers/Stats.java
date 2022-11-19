@@ -19,6 +19,14 @@ public class Stats {
     public void add(Stopwatch sw) {
         System.out.println(operation + ": " + sw.elapsed(TimeUnit.MILLISECONDS));
         times.add(sw.elapsed(TimeUnit.MILLISECONDS));
+        try {
+            System.gc();
+            Thread.sleep(1000);
+            System.gc();
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void printStat() {
